@@ -81,9 +81,12 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=None):
   if cities is None:
     return []
   # within will hold the cities that fall within the specified region
-  within = []
   lat1, lon1, lat2, lon2 = float(lat1), float(lon1), float(lat2), float(lon2)
   corner1, corner2 = None, None
+
+  # TODO Ensure that the lat and lon valuse are all floats
+  # Go through each city and check to see if it falls within 
+  # the specified coordinates.
 
   # Swap longitudes if they are the wrong way around
   if lon1 > lon2:
@@ -95,13 +98,11 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=None):
   else:
     corner1, corner2 = (lat2, lon1), (lat1, lon2)
   
-  # TODO Ensure that the lat and lon valuse are all floats
-  # Go through each city and check to see if it falls within 
-  # the specified coordinates.
   def is_within(v1, v2, pos):
     if (v2[0] > pos[0] > v1[0]) and (v1[1] > pos[1] > v2[1]):
       return True
     else:
       return False
 
+  within = [city for city in cities if is_within(corner1, corner2, (city.lat, city.lon))]
   return within
