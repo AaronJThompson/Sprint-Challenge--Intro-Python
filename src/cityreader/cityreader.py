@@ -77,7 +77,9 @@ for c in cities:
 
 # TODO Get latitude and longitude values from the user
 
-def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+def cityreader_stretch(lat1, lon1, lat2, lon2, cities=None):
+  if cities is None:
+    return []
   # within will hold the cities that fall within the specified region
   within = []
   lat1, lon1, lat2, lon2 = float(lat1), float(lon1), float(lat2), float(lon2)
