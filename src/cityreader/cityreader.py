@@ -77,6 +77,9 @@ for c in cities:
 
 # TODO Get latitude and longitude values from the user
 
+input_1 = input("lat1,lon1: ").strip().split(",")
+input_2 = input("lat2,lon2: ").strip().split(",")
+
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=None):
   if cities is None:
     return []
