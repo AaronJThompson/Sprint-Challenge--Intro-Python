@@ -24,6 +24,9 @@ class Motorcycle(GroundVehicle):
     def __init__(self):
         super().__init__(2)
 
+    def drive(self):
+        return "BRAAAP!!"
+
 # TODO
 
 vehicles = [
