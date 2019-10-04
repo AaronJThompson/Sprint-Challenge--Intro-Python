@@ -36,7 +36,7 @@ print(b)
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = []
+c = [h for h in humans if h.name[0] in list(map(chr, range(ord('C'), ord('G')+1)))]
 print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
