@@ -20,3 +20,9 @@
 
 class Vehicle:
   pass
+
+class GroundVehicle(Vehicle):
+  pass
+
+class FlightVehicle(Vehicle):
+  pass
