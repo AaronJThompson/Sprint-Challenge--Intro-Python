@@ -110,4 +110,5 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=None):
   within = [city for city in cities if is_within(corner1, corner2, (city.lat, city.lon))]
   return within
 
-print(cityreader_stretch(input_1[0], input_1[1], input_2[0], input_2[1], cities))
+for c in cityreader_stretch(input_1[0], input_1[1], input_2[0], input_2[1], cities):
+    print(c)
