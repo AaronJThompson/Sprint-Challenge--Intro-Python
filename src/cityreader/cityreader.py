@@ -25,12 +25,16 @@ import csv
 
 cities = []
 
-def cityreader(cities=[]):
+def cityreader(cities=None):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the 
   # `cities` list
-    
-    return cities
+  if cities is None:
+    cities = []
+  with open('cities.csv') as citiescsv:
+    rows = csv.DictReader(citiescsv)
+    for city in rows:
+  return cities
 
 cityreader(cities)
 
